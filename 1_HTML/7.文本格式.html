@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body style="background-color: darkgray">
+    <!--1.引用-->
+    <!--块引用：cite属性表示引文来源，<cite>元素表示来源的文本表述-->
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+      这是一段被引用的内容
+    </blockquote>
+    <!--行内引用-->
+    <q>这是一段被引用的内容</q>
+    <br><br><br><br>
+
+    <!--2.引文-->
+    <cite>这是引文</cite>
+    <br><br><br><br>
+
+    <!--3.缩略语：abbr的title提供缩写的解释-->
+    这是一段缩略语，<abbr title="缩略的内容">缩略内容</abbr>在这里
+    <br><br><br><br>
+
+    <!--4.标记联系方式：address为了标记编写 HTML 文档的人的联系方式，而不是任何其他的内容-->
+    <address>
+      <p>这是我的联系方式呀</p>
+    </address>
+    <br><br><br><br>
+
+    <!--5.上标和下标：方程中常用的小字<sup><sub>-->
+    <p>X<sup>2</sup>Y<sup>3</sup></p>
+    <p>X<sub>2</sub>Y<sub>3</sub></p>
+    <br><br><br><br>
+
+    <!--6.展示计算机代码-->
+    <!--<code>用于标记计算机通用代码-->
+    <code>const para = document.querySelector('p');
+      para.onclick = function() {
+      alert('hhh');
+      }</code>
+    <!--<pre>用于保留空白字符(缩进或多余的空白)-->
+    <pre>const para = document.querySelector('p');
+            para.onclick = function() {
+            alert('hhh');
+            }</pre>
+    <!--<var>用于标记具体变量名-->
+    <code>const <var>para</var> = document.querySelector('p');</code>
+    <br><br><br>
+    <!--<kbd>用于标记输入电脑的键盘（或其他类型）输入-->
+    复制快捷键<kbd>Ctrl+C</kbd>
+    <br><br><br>
+    <!--<samp>用于标记计算机程序的输出-->
+    <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+      64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp>
+    <br><br><br><br>
+
+    <!--7.标记时间和日期：世界上有许多种书写日期的格式，不同的格式不容易被电脑识别，<time>元素允许你附上清晰的、可被机器识别的时间/日期-->
+    <!-- 标准简单日期 -->
+    <time datetime="2016-01-20">20 January 2016</time>
+    <br>
+    <!-- 只包含年份和月份-->
+    <time datetime="2016-01">January 2016</time>
+    <br>
+    <!-- 只包含月份和日期 -->
+    <time datetime="01-20">20 January</time>
+    <br>
+    <!-- 只包含时间，小时和分钟数 -->
+    <time datetime="19:30">19:30</time>
+    <br>
+    <!-- 还可包含秒和毫秒 -->
+    <time datetime="19:30:01.856">19:30:01.856</time>
+    <br>
+    <!-- 日期和时间 -->
+    <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+    <br>
+    <!-- 含有时区偏移值的日期时间 -->
+    <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+    <br>
+    <!-- 调用特定的周 -->
+    <time datetime="2016-W04">The fourth week of 2016</time>
+    <br>
+    <br><br><br><br>
+  </body>
+</html>
