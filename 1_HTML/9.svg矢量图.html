@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <!--1.矢量图通过算法定义，不会失真，不用存储每个像素点，而位图通过像素网络定义，会失真-->
+    <div>
+      <svg t="1669551977407" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+           p-id="5091" width="200" height="200">
+        <path d="M512 512m-320 0a320 320 0 1 0 640 0 320 320 0 1 0-640 0Z" fill="#1296db" p-id="5092"></path>
+      </svg>
+      <img src="./img/png.png">
+    </div>
+
+
+    <!--2.svg的基本使用-->
+    <!--<svg>是顶层标签，可设置宽度高度等 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+    </svg>
+    <!--<svg>中只想展示部分通过viewBox设置，其中前面两个表示坐标，后边两个表示宽高-->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox='50 50 50 50'>
+      <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+    </svg>
+    <!-- 圆 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <!-- cx表示圆心的x坐标，cy表示圆心的y轴坐标 r表示半径 -->
+      <circle cx="50" cy="50" r="40" fill='red'/>
+    </svg>
+    <!-- 直线 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2"/>
+    </svg>
+
+
+    <!--3.svg嵌入网页-->
+    <!--直接复制SVG源码嵌入-->
+    <svg t="1669551977407" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+         p-id="5091" width="200" height="200">
+      <path d="M512 512m-320 0a320 320 0 1 0 640 0 320 320 0 1 0-640 0Z" fill="#1296db" p-id="5092"></path>
+    </svg>
+    <!--img方式使svg失去本身可编辑的特点，背景图片方式就不展示-->
+    <img src="./img/svg.svg">
+    <!--iframe方式可设置iframe大小与图片大小一致，同时去除边框-->
+    <iframe src="./img/svg.svg" width="200" height="200" style="border: none;"></iframe>
+    <!--object方式最好指明类型type-->
+    <object data="./img/svg.svg" type="image/svg+xml"></object>
+    <!--embed方式-->
+    <embed src="./img/svg.svg" type="image/svg+xml">
+  </body>
 </html>

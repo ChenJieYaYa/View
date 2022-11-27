@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <form action="表单要提交的服务器的地址" method="get默认，post...">
+
+      <label for="input的名字，用来表示这个label是那个input的"></label> for：<br>
+      <hr>
+
+      <span style="color: red;font-size: 10px;">***</span>：在某行内部设置文字<br>
+      <hr>
+
+      <input name="h1" type="hidden" value=""/>：隐藏域，不显示在网页中<br>
+      <input name="t1" type="text" value="默认值" maxlength="文本输入的最大长度" placeholder=""/>：普通文本框，显示默认值value，最多可以输入maxlength，输入时自动消失的默认值<br>
+      <input name="p1" type="password" maxlength="文本输入的最大长度"/>：隐藏输入的文本框（密码），最多可以输入maxlength<br>
+      <hr>
+
+      <input name="r1" type="radio" value="男" checked="true"/>男
+      <input name="r1" type="radio" value="女"/>女<br>
+      单选按钮（注意按钮的name要一样，一样表示在同一个分组中，否则可以多选） checked：默认选择
+      <hr>
+
+      <input name="c1" type="checkbox" value="11"/>篮球
+      <input name="c1" type="checkbox" value="22"/>足球<br>
+      多选按钮（name一样表示在同一个分组中）
+      <hr>
+
+      <input type="reset" value="重置"/>：重置按钮，点击后所有内容重置
+      <br>
+      <input type="submit" value="提交"/>：提交按钮，点击后所有内容提交
+      <br>
+      <input type="button" value="普通"/>：普通按钮，功能可通过js自己写
+      <br>
+      <hr>
+
+      <input name="f1" type="file"/>：选择文件
+      <hr>
+
+      <textarea name="ar1" rows="行数" cols="列数"></textarea>：多行文本
+      <hr>
+
+      <select name="s1">：下拉列表
+        <option value="">下拉选项1</option><!--下拉选项-->
+        <option value="">下拉选项2</option>
+        <option value="">下拉选项3</option>
+      </select>
+    </form>
+  </body>
 </html>

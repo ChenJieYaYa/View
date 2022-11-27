@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .bg-test {
+            background-image: url("./img/title.png");
+        }
+    </style>
+
+    <script>
+        function load_test() {
+            const videoDom = document.getElementById('load-test');
+            videoDom.load();
+        }
+    </script>
+
+  </head>
+  <body>
+    <!--1.图片：src指定图片路径，alt指定图片无法显示时的描述，width和height指宽高，title指提示信息-->
+    <img src="./img/title.png"><br><br>
+    <img src="../img/title.png" alt="图片无法显示时的描述"><br><br>
+    <img src="./img/title.png" width="20px" height="40px"><br><br>
+    <img src="./img/title.png" title="提示信息"><br><br>
+
+    <figure>
+      <img src="./img/title.png">
+      <figcaption>图片的标题</figcaption>
+    </figure>
+
+    <div class="bg-test" style="width: 300px;height: 300px;border: darkgray 1px solid"></div>
+
+
+    <!--2.视频-->
+    <!--src指向外部文件，controls表示是否允许用户控制播放-->
+    <video src="img/mp4.mp4" controls></video>
+    <!--source指向不同的视频文件，浏览器会选择兼容的格式播放-->
+    <video controls>
+      <source src="img/mp4.mp4" type="video/mp4">
+      <source src="./img/2.webm" type="video/webm">
+      <br><br>
+    </video>
+    <!--width和height设置宽高-->
+    <video src="img/mp4.mp4" controls width="200"></video>
+    <!--autoplay自动播放，loop循环播放，muted默认静音-->
+    <video src="img/mp4.mp4" controls width="200" autoplay loop muted></video>
+    <!--poster设置封面，preload用于缓冲，`none`表示不缓冲，`auto`表示页面加载后缓存媒体文件，`metadata`表示仅缓冲文件的元数据-->
+    <video src="img/mp4.mp4" controls width="200" poster="img/title.png"></video>
+
+
+    <!--3.音频-->
+    <audio src="img/mp3.mp3" controls></audio>
+    <audio controls>
+      <source src="img/mp3.mp3" type="audio/mp3">
+      <source src="./img/1.ogg" type="audio/ogg">
+    </audio>
+
+
+    <!--4.重新播放媒体-->
+    <div>
+      <video id="load-test" src="img/mp4.mp4" controls height="300px"></video>
+      <input type="button" value="重新播放" onclick="load_test()">
+    </div>
+
+
+    <!--5.音轨删除事件-->
+    <!--
+    const videoDom = document.querySelector('video');
+    videoDom.audioTracks.onaddtrack = function(event) {
+      audioTrackAdded(event.track);
+    };
+    -->
+
+
+    <!--6.显示音轨文本-->
+    <video controls>
+      <source src="example.mp4" type="video/mp4">
+      <source src="example.webm" type="video/webm">
+      <track kind="subtitles" src="subtitles_en.vtt" srclang="en">
+    </video>
+
+
+    <!--7.其他嵌入技术-->
+
+  </body>
 </html>
