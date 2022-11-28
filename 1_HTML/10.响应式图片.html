@@ -3,7 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        .img2 {
+            width: 320px;
+        }
+    </style>
+
   </head>
   <body>
+    <!--1.srcset+sizes：若浏览器以视窗宽度为480来加载页面，那么(max-width: 480px)媒体条件为真，因此440px的槽会被选择，所以./img/title.png将被加载-->
+    <img
+        srcset="./img/png.png 320w,
+             ./img/title.png 480w,
+             ./img/jpg.jpg 800w"
+        sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+        src="./img/jpg.jpg"
+    >
+    <hr>
+
+    <!--2.srcset+x-->
+    <img
+        class="img2"
+        srcset="./img/png.png ,
+             ./img/title.png 1.5x,
+             ./img/jpg.jpg 2x"
+        src="./img/jpg.jpg"
+    >
+    <hr>
+
+    <!--3.picture-->
+    <picture>
+      <source media="(min-width: 400px)" srcset="./img/jpg.jpg">
+      <source media="(min-width: 800px)" srcset="./img/title.png">
+      <img src="./img/png.png">
+    </picture>
   </body>
 </html>
