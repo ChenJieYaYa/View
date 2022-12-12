@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div {
+            margin-top: 5px;
+            background-color: skyblue;
+            border: 5px solid cornflowerblue;
+        }
+
+        #all-inherit {
+            all: inherit;
+        }
+
+        #all-initial {
+            all: initial;
+        }
+
+        #all-revert {
+            all: revert;
+        }
+
+        #all-unset {
+            all: unset;
+        }
+    </style>
+  </head>
+  <body style="background-color: darkgray">
+    <!--1.继承：继承指设置在父元素上的CSS属性被子元素继承，注意并不是所有属性都能被继承，例如`width`-->
+    <!--1.1.CSS为控制继承提供了五个特殊的通用属性值，每个CSS属性都接收这些值-->
+    <ul id='inherit' style="color: green">
+      <li id="inherit1">Default <a href="#">link</a> color</li>
+      <!--继承父类，即inherit2的颜色，而inherit2继承自ul-->
+      <li id="inherit2">Inherit the <a href="#" style="color: inherit">link</a> color</li>
+      <li id="inherit3">Initial the <a href="#" style="color: initial">link</a> color</li>
+      <li id="inherit4">Revert the <a href="#" style="color: revert">link</a> color</li>
+      <li id="inherit5">Unset the <a href="#" style="color: unset">link</a> color</li>
+    </ul>
+    <!--1.2.`all`属性用于重设(几乎所有)属性值，它的值可以是`inherit`、`initial`、`revert`或`unset`-->
+    <div id="all-default">default</div>
+    <div id="all-inherit">inherit</div>
+    <div id="all-initial">initial</div>
+    <div id="all-revert">revert</div>
+    <div id="all-unset">unset</div>
+  </body>
+</html>
