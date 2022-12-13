@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px
+        }
+
+        * {
+            color: skyblue;
+        }
+
+        div {
+            color: cornflowerblue;
+        }
+
+        .class-selector1 {
+            color: aquamarine;
+        }
+
+        .class-selector2 {
+            border: 1px solid black;
+        }
+
+        #id-selector1 {
+            color: chartreuse;
+        }
+
+        [style] {
+            border: 1px solid black;
+        }
+
+        [style="background-color:cornflowerblue;color: black"] {
+            border: 5px solid black;
+        }
+
+        [style^='fon'] {
+            border: 5px solid black;
+        }
+
+        [style$='0px'] {
+            border: 5px solid black;
+        }
+
+        [style*='si'] {
+            border: 5px solid black;
+        }
+
+        div#intersection-id-selector1.intersection-class-selector1 {
+            background-color: aquamarine;
+        }
+
+        #intersection-id-selector2, .intersection-class-selector2 {
+            background-color: aquamarine;
+        }
+
+        .relation-selector1-fu > .relation-selector1-zi {
+            color: plum;
+        }
+
+        .relation-selector2-gfu .relation-selector2-zi {
+            color: plum;
+        }
+
+        .relation-selector3-bro1 + div {
+            color: black;
+            font-size: 40px;
+        }
+
+        .relation-selector3-bro2 ~ div {
+            color: black;
+            font-size: 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <!--1.通配选择器*{}-->
+    <h1>通配选择器*{}</h1>
+
+    <!--2.元素选择器ElementName{}-->
+    <div>元素选择器ElementName{}</div>
+
+    <!--3.类选择器ClassName{}-->
+    <div class="class-selector1 class-selector2">类选择器ClassName{}</div>
+
+    <!--4.ID选择器IdName{}-->
+    <div id="id-selector1">ID选择器IdName{}</div>
+
+    <!--5.属性选择器-->
+    <!--①`[属性名]`：选择含有指定属性的元素-->
+    <div style="color: plum">属性选择器：①`[属性名]`：选择含有指定属性的元素</div>
+    <!--③`[属性名^='属性值']`：选择属性值以指定值开头的元素-->
+    <div style="background-color:cornflowerblue;color: black">
+      属性选择器：③`[属性名^='属性值']`：选择属性值以指定值开头的元素
+    </div>
+    <!--③`[属性名^='属性值']`：选择属性值以指定值开头的元素-->
+    <div style="font-size: 30px">属性选择器：③`[属性名^='属性值']`：选择属性值以指定值开头的元素</div>
+    <!--④`[属性名$='属性值']`：选择属性值以指定值结尾的元素-->
+    <div style="font-size: 30px">属性选择器：④`[属性名$='属性值']`：选择属性值以指定值结尾的元素</div>
+    <!--⑤`[属性名*='属性值']`：选择属性值中含有某值的元素-->
+    <div style="font-size: 30px">属性选择器：⑤`[属性名*='属性值']`：选择属性值中含有某值的元素</div>
+
+    <!--6.复合选择器：复合选择器中任意选择器存在语法错误将会导致整条规则被忽略-->
+    <!--①交集选择器：选中同时包含所有选择器的元素，语法是`选择器1选择器2选择器3选择器n{}`，注意**交集选择器中如果有元素选择器则必须使用元素选择器开头**-->
+    <div id="intersection-id-selector1" class="intersection-class-selector1">
+      交集选择器：选择器1选择器2选择器3选择器n{}(交集选择器中如果有元素选择器则必须使用元素选择器开头)
+    </div>
+    <!--②并集选择器：选中包含其中任意选择器的元素，语法是`选择器1,选择器2,选择器3,选择器n{}`-->
+    <div id="intersection-id-selector2">
+      并集选择器：选择器1,选择器2,选择器3,选择器n{}
+    </div>
+    <div class="intersection-class-selector2 other-class">
+      并集选择器：选择器1,选择器2,选择器3,选择器n{}
+    </div>
+
+    <!--7.关系选择器-->
+    <!--①子元素选择器：选中父元素下的子元素，*子元素指父元素下的相邻一级元素*，语法是`父元素 > 子元素{}`-->
+    <div class="relation-selector1-fu" style="border: 3px solid darkred;padding: 9px">
+      <div class="relation-selector1-zi" style="border: 3px solid red;padding: 9px">
+        level2
+        <span class="relation-selector1-zi" style="border: 3px solid coral;margin: 3px">level3.1</span>
+        <span class="relation-selector1-zi" style="border: 3px solid coral;margin: 3px">level3.2</span>
+      </div>
+    </div>
+    <!--②后代元素选择器：选中祖先元素下的所有元素，*后代元素指祖先元素下的所有元素*，语法是`祖先 后代{}`-->
+    <div class="relation-selector2-gfu" style="border: 3px solid darkred;padding: 9px">
+      <div class="relation-selector2-zi" style="border: 3px solid red;padding: 9px">
+        level2
+        <span class="relation-selector2-zi" style="border: 3px solid coral;margin: 3px">level3.1</span>
+        <span class="relation-selector2-zi" style="border: 3px solid coral;margin: 3px">level3.2</span>
+      </div>
+    </div>
+    <!--③兄弟元素选择器：*兄弟元素指拥有相同父元素的元素*，存在两种兄弟元素选择器，语法分别是`前一个 + 下一个{}`、`前一个 ~ 下一组{}`-->
+    <!--`前一个 + 下一个{}`-->
+    <div style="border: 3px solid darkred;padding: 9px">
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro0</div>
+      <div class="relation-selector3-bro1" style="border: 3px solid red;padding: 9px;margin-top: 4px">bro1</div>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro2</div>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro3</div>
+      <p style="border: 3px solid red;padding: 9px;margin-top: 4px">bro4</p>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro5</div>
+    </div>
+    <!--`前一个 ~ 下一组{}：中间可以断`-->
+    <div style="border: 3px solid darkred;padding: 9px">
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro0</div>
+      <div class="relation-selector3-bro2" style="border: 3px solid red;padding: 9px;margin-top: 4px">bro1</div>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro2</div>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro3</div>
+      <p style="border: 3px solid red;padding: 9px;margin-top: 4px">bro4</p>
+      <div style="border: 3px solid red;padding: 9px;margin-top: 4px">bro5</div>
+    </div>
+
+    <!--8.伪类选择器-->
+    <!--9.伪元素选择器-->
+  </body>
+</html>
